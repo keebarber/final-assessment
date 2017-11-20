@@ -1,6 +1,7 @@
 
 export function findMatchingUser(username, password) {
   
+  //    This still doesn't make sense to me that I need to sort through it like this, but it works
   let newUser = username.user.username;
   let newPass = username.user.password;
 

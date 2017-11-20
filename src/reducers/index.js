@@ -13,16 +13,13 @@ export default function(state = INITIAL_STATE, action) {
 		}
 }
 
-function login(state, user) {
 
+function login(state, user) {
 	const currentUser = user;
-	// const newUser = username;
-	// const newPassword = password;
-	// console.log(newUser);
-	console.log(user);
 
 	return Object.assign({}, state, {
-		user: currentUser
+		user: currentUser,
+		loggedInUser: !state.loggedInUser
 		
 	});
 }

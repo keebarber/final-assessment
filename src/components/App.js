@@ -8,18 +8,26 @@ import { login } from '../actions';
 
 class App extends Component {
   render() {
-    return (
+    if (this.props.loggedInUser != null) {
+      return (
       <div className="App">
-      	<SignIn  onSubmit={this.props.login}/>
-      	<Profile />
+          <Profile />
       </div>
-    );
+      );
+    } else {
+      return (
+       <div className="App">
+          <SignIn  onSubmit={this.props.login}/>
+      </div>
+        );
+    }
   }
 }
 
 function mapStateToProps(state) {
 	return {
-		user: state.user
+		user: state.user,
+             loggedInUser: state.loggedInUser
 	};
 }
 
