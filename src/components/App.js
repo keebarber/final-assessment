@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LoginForm from './LoginForm';
-import UserInfo from './UserInfo';
+import SignIn from './SignIn';
+import Profile from './Profile';
 import { login } from '../actions';
 
 
@@ -10,10 +10,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      	<LoginForm  onSubmit={this.props.login}/>
-      	{this.props.username.username}
-      	{this.props.username.password}
-      	<UserInfo />
+      	<SignIn  onSubmit={this.props.login}/>
+      	<Profile />
       </div>
     );
   }
@@ -21,8 +19,7 @@ class App extends Component {
 
 function mapStateToProps(state) {
 	return {
-		username: state.username,
-		password: state.password
+		user: state.user
 	};
 }
 

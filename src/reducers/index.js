@@ -1,27 +1,28 @@
 const INITIAL_STATE = {
-		username: "testuser",
-		password: "test word"
+		user: {},
+		loggedInUser: null
 };
 
 
 export default function(state = INITIAL_STATE, action) {
 		switch(action.type) {
 			case "LOGIN_SUCCESS":
-				return login(state, action.username, action.password);
+				return login(state, action.user);
 			default:
 				return state;
 		}
 }
 
-function login(state, username, password) {
+function login(state, user) {
 
-	const newUser = username;
-	const newPassword = password;
-	console.log(newUser);
+	const currentUser = user;
+	// const newUser = username;
+	// const newPassword = password;
+	// console.log(newUser);
+	console.log(user);
 
 	return Object.assign({}, state, {
-		username: newUser,
-		password: newPassword
+		user: currentUser
 		
 	});
 }

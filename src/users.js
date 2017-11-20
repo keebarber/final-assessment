@@ -1,7 +1,11 @@
 
 export function findMatchingUser(username, password) {
+  
+  let newUser = username.user.username;
+  let newPass = username.user.password;
+
     return userList.find(user =>
-        user.username === username && user.password === password
+        user.username === newUser && user.password === newPass
     ) || null;
 }
 
